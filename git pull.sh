@@ -16,5 +16,5 @@ fi
 if [[ "$OSTYPE" == "linux-gnu"* ]]; then
     gnome-terminal -e "bash -c 'git pull;git switch $remote_branch;git pull;git switch $branch;exec bash'"
 elif [[ "$OSTYPE" == "msys"* ]]; then
-    start bash -c "git pull;git switch $remote_branch;git pull;git switch $branch;exec bash"
+    start bash -c "git pull;git switch $remote_branch;git pull;git switch $branch;git push -u origin;exec bash"
 fi
