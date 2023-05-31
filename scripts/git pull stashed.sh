@@ -6,17 +6,12 @@ cd "$parent_path"
 
 cd ..
 
+cd ..
+
 if [[ "$OSTYPE" == "linux-gnu"* ]]; then
-    if grep -qi "debian" /etc/os-release; then
-        terminal="konsole"
-    else
-        terminal="gnome-terminal"
-    fi
-elif [[ "$OSTYPE" == "msys"* ]]; then
+    terminal="konsole"
+    elif [[ "$OSTYPE" == "msys"* ]]; then
     terminal="start"
-else
-    echo "Script não suportado para este Sistema Operacional."
-    exit 1
 fi
 
 main_branch=$(git symbolic-ref refs/remotes/origin/HEAD | sed 's@^refs/remotes/origin/@@' | grep -E 'main|master')
